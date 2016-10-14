@@ -21,7 +21,7 @@
 		smallImage.src = "data:image/jpeg;base64," + imageData;
 	}
 
-	function scan(){
+	document.getElementById("barcode").onclick = function(){
 		cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) {
             alert("encode success: " + success);
           }, function(fail) {
@@ -29,4 +29,5 @@
           }
         );
 	}
+
 })();
