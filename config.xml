@@ -111,7 +111,6 @@
   <preference name="android-targetSdkVersion" value="21" />
   <plugin name="cordova-plugin-camera"  />
   <plugin name="cordova-plugin-media-capture" />
-  <plugin name="cordova-plugin-compat" />
   <plugin name="cordova-plugin-file" />
   <plugin name="cordova-plugin-barcodeScanner" />
 
