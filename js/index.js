@@ -22,8 +22,9 @@
           }
       }
 
+     document.getElementById("geolocationdata").onclick = function(){
+     	navigator.geolocation.getCurrentPosition(onSuccess, onError});
      
-     	var watchID = cordova.geolocation.watchPosition(onSuccess, onError, {timeout: 30000});
      
 };
 
@@ -33,14 +34,13 @@
 		smallImage.src = "data:image/jpeg;base64," + imageData;
 	}
 
-	function onSuccess = function (position){
-		var element = document.getElementById('geolocation');
-		element.innerHTML = 'Latitude:' + position.coords.latitude + '<br />' +
-							'Longitude:' + position.coords.longitude + '<br />' +
-							'<hr />' + element.innerHTML;
-	};
+	var onSuccess = function(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              ;
+    };
 
-	function onError(error) {
+    function onError(error) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
