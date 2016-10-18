@@ -22,9 +22,9 @@
           }
       }
 
-     document.getElementById("geolocationdata").onclick = function(){
+     
      	var watchID = cordova.geolocation.watchPosition(onSuccess, onError, {timeout: 30000});
-     }
+     
 };
 
 	function onPhotoDataSuccess (imageData) {
@@ -38,7 +38,7 @@
 		element.innerHTML = 'Latitude:' + position.coords.latitude + '<br />' +
 							'Longitude:' + position.coords.longitude + '<br />' +
 							'<hr />' + element.innerHTML;
-	}
+	};
 
 	function onError(error) {
         alert('code: '    + error.code    + '\n' +
