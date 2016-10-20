@@ -22,9 +22,9 @@
           }
       }
 
-     document.getElementById("geolocationdata").onclick = function(){
-     	navigator.geolocation.getCurrentPosition(onSuccess, onError});
-     
+     // document.getElementById("geolocationdata").onclick = function(){
+     // 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+     // }
      
 };
 
@@ -37,7 +37,7 @@
 	var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
-              ;
+              );
     };
 
     function onError(error) {
