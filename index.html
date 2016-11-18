@@ -62,128 +62,16 @@
 			</div><!-- /header -->
 			</br>
 			<img align="center" src="elections.png" />
-			<div id="geolocation"></div>
-			<div data-role="content" style="text-shadow: none">
-				<a href="#declareRegions" data-transition="flip">
-					<button>Declare</button>
-				</a>
 
-				<a href="#results" data-transition="slide">
-					<button>Results</button>
-				</a>
-				 
-					<button id="capturePhoto">Camera</button>
-					<button id="geolocationdata">Geolocation</button> -->
+			<div data-role="content" style="text-shadow: none">
+
 					<button id="barcode">Barcode Scanner</button>
 				
 			</div><!-- /content -->
 		</div><!-- /page -->
 
-		<div data-role="page" id="declareRegions">
-			<div data-role="header" style="text-shadow: none">
-				<h1>EC</h1>
-				<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" style="background: white;border: none;">Back</a>
-			</div><!-- /header -->
 
-			<div data-role="content" style="text-shadow: none">
-				<select id="filter-menu" data-native-menu="false">
-					<option value="GA">Greater Accra</option>
-					<option value="WR">Western</option>
-					<option value="GA">Eastern</option>
-					<option value="VR">Volta</option>
-					<option value="AR">Ashanti</option>
-					<option value="NR">Northern</option>
-					<option value="BA">Brong Ahafo</option>
-					<option value="CR">Central</option>
-					<option value="UE">Upper East</option>
-					<option value="UW">Upper West</option>
-				</select>
-
-				<select id="constituency-menu" data-native-menu="false">
-					<option value="GA">Constituency A</option>
-					<option value="WR">Constituency B</option>
-					<option value="GA">Constituency C</option>
-					<option value="VR">Constituency D</option>
-					<option value="AR">Constituency E</option>
-					<option value="NR">Constituency F</option>
-					<option value="BA">Constituency G</option>
-				</select>
-				<br />
-
-				<label>AFP</label>
-				<input type="number"/>
-
-				<label>GHU</label>
-				<input type="number"/>
-
-				<label>FVH</label>
-				<input type="number"/>
-
-				<label>HSJ</label>
-				<input type="number"/>
-			</div><!-- /content -->
-		</div><!-- /page -->
-
-		<div data-role="page" id="results">
-			<div data-role="header" style="text-shadow: none">
-				<h1>EC</h1>
-				<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" style="background: white;border: none;">Back</a>
-			</div><!-- /header -->
-
-			<div data-role="content" style="text-shadow: none">
-				<h3>AFP:</h3>30
-				<br />
-				<h3>GHU:</h3>30
-				<br />
-				<h3>FVH:</h3>30
-				<br />
-				<h3>HSJ:</h3>30
-			</div><!-- /content -->
-		</div>
-
+		<script type="text/javascript" src="js/lib/cordova-android.js"></script>
 	</body>
-	<script>
-		$.mobile.document
-		// "filter-menu-menu" is the ID generated for the listview when it is created
-		// by the custom selectmenu plugin. Upon creation of the listview widget we
-		// want to prepend an input field to the list to be used for a filter.
-		.on("listviewcreate", "#filter-menu-menu", function(e) {
-			var input,
-			    listbox = $("#filter-menu-listbox"),
-			    form = listbox.jqmData("filter-form"),
-			    listview = $(e.target);
-			// We store the generated form in a variable attached to the popup so we
-			// avoid creating a second form/input field when the listview is
-			// destroyed/rebuilt during a refresh.
-			if (!form) {
-				input = $("<input data-type='search'/>");
-				form = $("<form></form>").append(input);
-				input.textinput();
-				$("#filter-menu-listbox").prepend(form).jqmData("filter-form", form);
-			}
-			// Instantiate a filterable widget on the newly created listview and
-			// indicate that the generated input is to be used for the filtering.
-			listview.filterable({
-				input : input
-			});
-		})
-		// The custom select list may show up as either a popup or a dialog,
-		// depending how much vertical room there is on the screen. If it shows up
-		// as a dialog, then the form containing the filter input field must be
-		// transferred to the dialog so that the user can continue to use it for
-		// filtering list items.
-		//
-		// After the dialog is closed, the form containing the filter input is
-		// transferred back into the popup.
-		.on("pagebeforeshow pagehide", "#filter-menu-dialog", function(e) {
-			var form = $("#filter-menu-listbox").jqmData("filter-form"),
-			    placeInDialog = (e.type === "pagebeforeshow" ),
-			    destination = placeInDialog ? $(e.target).find(".ui-content") : $("#filter-menu-listbox");
-			form.find("input")
-			// Turn off the "inset" option when the filter input is inside a dialog
-			// and turn it back on when it is placed back inside the popup, because
-			// it looks better that way.
-			.textinput("option", "inset", !placeInDialog).end().prependTo(destination);
-		});
-	</script>
+
 </html>
