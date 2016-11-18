@@ -73,7 +73,6 @@
 				</a>
 				 
 					<button id="capturePhoto">Camera</button>
-					<div><center><img class="lazy" style="display:none;width:100%;height:100%;" id="smallImage" src="" /></center></div><!-- 
 					<button id="geolocationdata">Geolocation</button> -->
 					<button id="barcode">Barcode Scanner</button>
 				
@@ -100,7 +99,7 @@
 					<option value="UW">Upper West</option>
 				</select>
 
-				<select id="filter-menu" data-native-menu="false">
+				<select id="constituency-menu" data-native-menu="false">
 					<option value="GA">Constituency A</option>
 					<option value="WR">Constituency B</option>
 					<option value="GA">Constituency C</option>
@@ -157,7 +156,7 @@
 			// avoid creating a second form/input field when the listview is
 			// destroyed/rebuilt during a refresh.
 			if (!form) {
-				input = $("<input data-type='search'></input>");
+				input = $("<input data-type='search'/>");
 				form = $("<form></form>").append(input);
 				input.textinput();
 				$("#filter-menu-listbox").prepend(form).jqmData("filter-form", form);

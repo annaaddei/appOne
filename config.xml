@@ -113,7 +113,7 @@
   <plugin name="cordova-plugin-media-capture" />
   <plugin name="cordova-plugin-compat" />
   <plugin name="cordova-plugin-file" />
-  <plugin name="cordova-plugin-barcodescanner" />
+  <plugin name="cordova-plugin-barcodeScanner" />
   <plugin name="cordova-plugin-geolocation" />
 
 
